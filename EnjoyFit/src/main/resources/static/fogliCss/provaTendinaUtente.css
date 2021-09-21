@@ -1,0 +1,140 @@
+
+.header{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 90vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.header img{
+	position: absolute;
+	width: 100%;
+	z-index: -2;
+}
+
+.fade{
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.fade img{
+	height: 20vh;
+	top: 20%;
+    z-index: 1;
+}
+
+.fade .bgBlack{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	z-index: -1;
+}
+
+.fade h1{
+	font-size: 7vh;
+	margin:2%;
+}
+.fade p{
+    font-size: 2.5vh;
+    margin-bottom: 10%;
+    width: 50%;
+    text-align: center;
+}
+
+.boxes{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	
+}
+
+.box{
+	height: 70%;
+	width: 60vh;
+	border:solid;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color:white;
+	transition: 0.5s;
+	margin: 5%;
+	box-shadow: 0 5px #fcba03; 
+}
+
+.box img{
+	position: absolute;
+    height: 100%;
+    z-index: -2;
+    transition: 0.5s;
+}
+
+.box .bg{
+	background: rgba(0,0,0,0);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+.box > h1{
+	position: absolute;
+	top:101%;
+	font-size: 6vh;
+	transition: 0.5s;
+}
+
+.box p{
+	position: absolute;
+	top:110%;
+	font-size: 3vh;
+	width: 80%;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.box .bottomBar{
+	background: white;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: -50%;
+	height: 10vh;
+	width: 100%;
+	transition: 0.5s;
+}
+
+.box:hover > h1{
+	top:7%;
+}
+
+.box:hover > p{
+	top:40%;
+}
+.box:hover > .bottomBar{
+	bottom:0%;
+}
+.box:hover > .bg{
+	background: rgba(0,0,0,0.8);
+}
+.box:hover > img{
+	height: 107%;
+}

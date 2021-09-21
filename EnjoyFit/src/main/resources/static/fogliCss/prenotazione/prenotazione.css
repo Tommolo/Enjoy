@@ -1,0 +1,53 @@
+* {
+	margin:0;
+}
+
+section {
+	padding: 50px;
+	font-family: adobe-gothic-std, sans-serif;
+	font-size:18px;
+}
+
+.title {
+	text-align: center;
+}
+
+.title p {
+	font-size: 30px;
+}
+
+.row {
+	padding: 25px 25px 25px 650px;
+}
+
+.column {
+	padding: 5px;
+}
+
+span {
+	padding-left:10px;
+	font-size: 17px;
+}
+
+.button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+button[type=button] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6.5px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+
+button[type=button]:hover {
+	background-color: red;
+	color: white;
+}

@@ -1,0 +1,128 @@
+*
+{
+	font-family: Market Deco;
+	margin-left:0;
+}
+section
+ {
+ 	margin-top: auto;
+ 	display: flex;
+ 	flex-direction: column;
+ 	font-size: 1em;
+ }
+ .gestioneTitle
+ {
+	
+ 	 margin-top: 4vh;
+	
+	height: 10%;
+ }
+ .gestioneTitle p
+ {
+	margin-left: 10%;
+	font-size: 3em;
+	 border-bottom: solid;
+ 	border-width: 2px;
+}
+
+ .ordiniTerminati
+ {
+ 	height: auto;
+ 	background-color:rgb(242, 242, 242);
+ 	font-size: 1.3em;
+ 	margin-bottom: 2vh;
+ 	padding-bottom: 5vh;
+ 	
+ 	
+ }
+ .ordiniTerminati p
+ {
+	margin-left: 10%;
+	margin-top: 3vh;
+}
+ 
+ .ordiniInCorso
+ {
+ 	height: auto;
+ 	font-size: 1.3em;
+
+ }
+ .ordiniInCorso p
+ {
+	
+	margin-left: 10%;
+	margin-top: 3vh;
+}
+ 
+ 
+ .type
+ {
+ 	font-size: 1.5em;
+ 	margin-left: 3vh;
+ }
+ section li
+ {
+ 	margin-left: 5vh;
+ 	margin-top: 3vh;
+ 	padding-top:  2vh;
+ 	
+ 	
+ }
+section ul{
+ margin-left: 15%;
+ }
+ section ul a
+ {
+	color:black;
+	text-decoration: none;
+	margin-bottom: 2vh;
+	transition:0.3s;
+  }
+section  ul a:hover
+  {
+	font-size: 1.1em;
+	transition:0.3s;
+}
+#piePagina
+{
+	height: 20%;
+	width: 50%;
+	
+	margin-top: 3%;
+	margin-left: 20%;
+	align-items: center;
+}
+#goBack1
+{
+  
+  appearance:button;
+  text-align: center;
+  color:red;
+  width: 210px;  
+  align-items: flex-start;
+  padding-top:1.2vh;
+  text-decoration: none;
+  margin-top: 3%;
+  margin-left: 50%;
+  
+  
+  background-color: white;
+  border: none;
+  height: 50px;
+  font-size: 15px;
+  width: 150px;
+
+  font-size: 1.3em;
+  
+}
+
+#goBack1:hover {
+  background-color: red;
+  border-radius: 20px;
+  transition:0.3s;
+  color: white;
+}
+
+ 
+ 
+ 

@@ -1,0 +1,30 @@
+body{
+	font-family: Market Deco;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.content{
+	width:90%;
+	border:solid;
+	margin: 0 10%;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.item{
+	height:10vh;
+	width: 50%;
+	border:solid;
+	display:flex;
+	justify-content: space-around;
+}
+
+.item img{
+	height:8vh;
+	width: 8vh;
+}

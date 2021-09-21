@@ -1,0 +1,119 @@
+
+
+ 
+.popUp 
+{
+  visibility: hidden;
+  position: fixed;
+  bottom: 12%;
+  right: 33%;
+  width: 33.33%;
+  height: 60%;
+  
+ }
+
+
+ .container {
+	border-radius: 25px;
+	background-color: white;
+	-moz-box-shadow: 2px 2px 2px #333333, 5px 6px 3px #707070ff;
+    -webkit-box-shadow:2px 2px 2px #333333, 5px 6px 3px #707070ff;
+    box-shadow: 2px 2px 2px #333333, 5px 6px 3px #707070ff;
+}
+
+.header {
+	background-color: #ffdf6cff;
+	height:100px;
+	width:100%;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	display: table;
+	box-shadow: 0px 3px 2px 0 rgba(0,0,0,0.24), 0 0px 50px 0 rgba(0,0,0,0.19);
+}
+ .header p
+ {
+ 	font-size: 2.5em;
+ }
+
+
+
+ .section
+ {
+ 	height: 80%;
+ 	width: 100%;
+ 	text-align: center;
+ 	align-items: center;
+ 	justify-content: space-evenly;
+ 	flex-direction: column;
+ }
+ .btn
+ {
+ 	appearance: button;
+    width: 46%;
+    height: 23%;
+    background-color: #ffdf6cff;
+    margin-top: 10%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 12px;
+ }
+ .btn h2
+ {
+ 	font-family: adobe-gothic-std, sans-serif;
+    font-size: 1.2em;
+    padding: 20px;
+ }
+ .btn:hover
+ {
+ 	box-shadow: 2px 2px 2px #333333, 5px 6px 3px #707070ff;
+ 	background-color: rgb(255, 230, 110);
+ }
+ #closeForm
+ {
+  appearance: button;
+  font-size: 1em;
+  padding: 9px 27px;
+ 	border-radius: 12px;
+  z-index: 1;
+ }
+ #closeForm:hover
+ {
+ 	color: white;
+ 	background-color: rgb(255, 71, 26);
+ }
+ .opacityBox{
+	height:100%;
+	width:100%;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	top:0;
+	z-index: 10;
+	
+}
+.container {
+	border-radius: 25px;
+	background-color: white;
+	-moz-box-shadow: 2px 2px 2px #333333, 5px 6px 3px #707070ff;
+    -webkit-box-shadow:2px 2px 2px #333333, 5px 6px 3px #707070ff;
+    box-shadow: 2px 2px 2px #333333, 5px 6px 3px #707070ff;
+}
+
+.header {
+	background-color: #ffdf6cff;
+	height:100px;
+	width:100%;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	display: table;
+	box-shadow: 0px 3px 2px 0 rgba(0,0,0,0.24), 0 0px 50px 0 rgba(0,0,0,0.19);
+}
+
+.header p {
+	text-align: center;
+	vertical-align: middle;
+	font-size: x-large;
+	display: table-cell;
+}
+
+

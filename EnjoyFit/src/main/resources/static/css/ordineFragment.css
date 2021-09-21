@@ -1,0 +1,162 @@
+body
+{
+	font-family: Market Deco;
+  
+  
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+
+}
+head
+{
+  height: 100%;
+  width: 100%;
+}
+section
+{
+	display: flex;
+	margin-top: 0;
+	width: 100%;
+	height: 80vh;
+	
+	
+	margin-right:  5%;
+	flex-direction: column;
+}
+#container
+{
+	height: auto;
+	width: 90%;
+	margin-left: 10%;
+	
+}
+.title
+{
+	
+	 margin-top: 4vh;
+	 border-bottom: solid;
+ 	border-width: 2px;
+	height: 10%;
+
+}
+.title p
+{
+	margin-bottom: 20vh;
+	font-size: 2em;
+	
+}
+.corpo
+{
+	margin-left: 1%;
+	height: 70%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+	margin-top: 5vh;
+}
+.elements
+{
+	
+	border-radius: 20px;
+	height: 80%;
+	width: 45%;
+	padding-left: 2vh;
+}
+#lineeOrdine
+{
+	
+	border-radius: 20px;
+	
+	background-color: lightgray;
+	margin-right: 5%;
+	height: auto;
+}
+#intestazione
+{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 20%;
+	font-size: 0.8em;
+	border-radius: 20px;
+}
+.empty
+{
+	width: 60%;
+	
+}
+.empty p
+{
+	padding-top: 3vh;
+}
+#totInt
+{
+	text-align: center;
+}
+#totInt p
+{
+	margin-left: 3vh;
+}
+.noEmp
+{
+	width: 20%;
+	padding-top: 5vh;
+	text-align: right;
+	margin-right: 2vh;
+
+	
+}
+
+#linea
+{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	margin-left: 2vh;
+	border-radius: 20px;
+	padding-top: 1vh;
+	
+}
+.noEmpLinea
+{
+	width: 20%;
+	
+	text-align: center;
+	margin-bottom: 0px;
+}
+#prodotto
+{
+	margin-bottom: 0px;
+}
+#totale
+{
+	border-top: dotted;
+	height: 30%;
+	margin-top: 3vh;
+	padding-top: 3vh;
+	font-size: 1.4em;
+	margin-left: 2vh;
+}
+
+#totale #tot
+{
+	margin-left: 2vh;
+}
+
+
+
+ul
+{
+	list-style-type: none;
+}
+li
+{
+	margin-top: 3vh;
+}
+.value
+{
+	color: gray;
+}

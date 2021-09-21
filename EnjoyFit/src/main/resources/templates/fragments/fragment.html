@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="head(title)">
+	<link rel="stylesheet" th:href="@{/css/fragmentStyle.css}">
+	<title th:text="${title}"></title>
+	<link rel="icon" href="/images/svg/logo.svg" type="image/icon type">
+</head>
+<body>
+	<nav th:fragment="intestazione">
+		<div class="user">
+			<button class="dropbtn"><img th:src="@{/images/svg/user.svg}" height="50px" width="50px">
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/authentication/loginForm" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+				<a href="/authentication/registrationForm" th:href="@{/register}" sec:authorize="isAnonymous()"
+				th:text="#{tendina.registrati}">Registrati</a>
+				<a href="user" th:href="@{/utente}" sec:authorize="isAuthenticated()">Utente</a>
+				<a href="home" th:href="@{/logout}" sec:authorize="isAuthenticated()">Esci</a>
+			</div>
+		</div>
+		<div class="logo">
+			<img th:src="@{/images/svg/logo.svg}">
+			<p>Caffe'<br>Bistrot<br>Aperitivi</p>
+		</div>
+		<div class="nameAndMenu">
+			<a href="home" th:href="@{/home}"><h1>HAMBURGERIA RAVA</h1></a>
+			<ul>
+				<li><a th:href="@{/menu}">Menu</a></li>
+				<li><a th:href="@{/ordinaProdotto}" th:text="#{navbar.prenota}">Ordina</a></li>
+				<li><a href="https://www.google.it/maps/place/Rav%C3%A0+Hamburgeria+%F0%9F%8D%94/@41.8436084,12.4856734,17.23z/data=!4m5!3m4!1s0x13258ba7ce16ad19:0xfa26c275bce9bf5b!8m2!3d41.8436924!4d12.4878231" th:text="#{navbar.dovesiamo}">Dove Siamo</a></li>
+				<li><a href="#" th:text="#{navbar.contattaci}">Contatti</a></li>
+			</ul>
+		</div>
+		<div class="logoSocial">
+			<a id="ig" href="https://www.instagram.com/rava_hamburgeria/"><img th:src="@{/images/svg/ig.svg}"></a>
+			<a id="fb" href="https://www.facebook.com/RavaHamburgeria/"><img th:src="@{/images/svg/fb.svg}"></a>
+		</div>
+	</nav>
+	
+	<footer th:fragment="footer">
+		<div id="footerLinks">
+			
+			<div id="contatti">
+				<p th:text="#{home.contatti}">Contatti</p>
+				<ul>
+					<li th:text="#{home.tel}">Telefono: </li>
+					<li>Email:</li>
+				</ul>
+				
+			</div>
+			<div id="socialLinks">
+				<p>Socials</p>
+				<ul>
+					<li><a href="https://www.facebook.com/RavaHamburgeria/">Facebook</a></li>					
+
+					<li><a href ="https://www.instagram.com/rava_hamburgeria/">Instagram</a></li>
+				</ul>
+			</div>
+			<div id="pagine">
+				<p th:text="#{home.pagineUtili}">Pagine utili</p>
+				<ul>
+					<li><a th:href="@{/ordinaProdotto}" th:text="#{navbar.prenota}">Ordine</a></li>
+
+					<li><a href ="#">Menu</a></li>
+					<li><a th:href="@{/prenota}" th:text="#{home.prenotaTavolo}">Preonta tavolo</a></li>
+				</ul>
+				
+			</div>
+			<div id="Posizione">
+				<p th:text="#{home.recapiti}">Recapiti</p>
+					<ul>
+						<li th:text="#{home.via}">Via:</li>
+						<li th:text="#{home.citta}">Citta:</li>
+						<li th:text="#{home.cap}">Cap:</li>
+						<li>
+							<a id="posizione"  th:text="#{home.maps}"
+							href="https://www.google.it/maps/place/Rav%C3%A0+Hamburgeria+%F0%9F%8D%94/@41.8436084,12.4856734,17.23z/data=!4m5!3m4!1s0x13258ba7ce16ad19:0xfa26c275bce9bf5b!8m2!3d41.8436924!4d12.4878231">
+								Apri in maps
+							</a>
+
+						</li>
+				</ul>
+			</div>
+		</div>
+			
+	
+	</footer>
+	</body>
+
+</html>
