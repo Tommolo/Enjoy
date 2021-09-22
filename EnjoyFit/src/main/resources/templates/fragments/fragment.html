@@ -21,21 +21,21 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 			</div>
 		</div>
 		<div class="logo">
-			<img th:src="@{/images/svg/logo.svg}">
-			<p>Caffe'<br>Bistrot<br>Aperitivi</p>
+			<img th:src="@{/images/png/Logo.png}">
+			<p>Divertiti<br>Allenati<br>Soffri</p>
 		</div>
 		<div class="nameAndMenu">
-			<a href="home" th:href="@{/home}"><h1>HAMBURGERIA RAVA</h1></a>
+			<a href="home" th:href="@{/home}"><h1>Enjoy Fitness</h1></a>
 			<ul>
-				<li><a th:href="@{/menu}">Menu</a></li>
-				<li><a th:href="@{/ordinaProdotto}" th:text="#{navbar.prenota}">Ordina</a></li>
+				<li><a th:href="@{/menu}">Campi</a></li>
+				<li><a th:href="@{/ordinaProdotto}" >Abbonamenti</a></li>
 				<li><a href="https://www.google.it/maps/place/Rav%C3%A0+Hamburgeria+%F0%9F%8D%94/@41.8436084,12.4856734,17.23z/data=!4m5!3m4!1s0x13258ba7ce16ad19:0xfa26c275bce9bf5b!8m2!3d41.8436924!4d12.4878231" th:text="#{navbar.dovesiamo}">Dove Siamo</a></li>
 				<li><a href="#" th:text="#{navbar.contattaci}">Contatti</a></li>
 			</ul>
 		</div>
 		<div class="logoSocial">
-			<a id="ig" href="https://www.instagram.com/rava_hamburgeria/"><img th:src="@{/images/svg/ig.svg}"></a>
-			<a id="fb" href="https://www.facebook.com/RavaHamburgeria/"><img th:src="@{/images/svg/fb.svg}"></a>
+			<a id="ig" href="/#"><img th:src="@{/images/svg/ig.svg}"></a>
+			<a id="fb" href="/#"><img th:src="@{/images/svg/fb.svg}"></a>
 		</div>
 	</nav>
 	
@@ -53,9 +53,9 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 			<div id="socialLinks">
 				<p>Socials</p>
 				<ul>
-					<li><a href="https://www.facebook.com/RavaHamburgeria/">Facebook</a></li>					
+					<li><a href="/#">Facebook</a></li>					
 
-					<li><a href ="https://www.instagram.com/rava_hamburgeria/">Instagram</a></li>
+					<li><a href ="/#">Instagram</a></li>
 				</ul>
 			</div>
 			<div id="pagine">
@@ -63,8 +63,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 				<ul>
 					<li><a th:href="@{/ordinaProdotto}" th:text="#{navbar.prenota}">Ordine</a></li>
 
-					<li><a href ="#">Menu</a></li>
-					<li><a th:href="@{/prenota}" th:text="#{home.prenotaTavolo}">Preonta tavolo</a></li>
+					<li><a href ="#">Abbonamenti</a></li>
+					<li><a th:href="@{/prenota}" th:text="#{home.prenotaCampo}">Prenota Campo</a></li>
 				</ul>
 				
 			</div>

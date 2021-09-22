@@ -71,7 +71,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	color:white;
+	color:#006a90;
 	transition: 0.5s;
 	margin: 5%;
 	box-shadow: 0 5px #fcba03; 
@@ -85,7 +85,7 @@
 }
 
 .box .bg{
-	background: rgba(0,0,0,0);
+	
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -111,7 +111,7 @@
 
 .box .bottomBar{
 	background: white;
-	color: black;
+	color:#b8a999 ;
 	display: flex;
 	align-items: center;
 	justify-content: center;

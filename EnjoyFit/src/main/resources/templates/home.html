@@ -14,36 +14,36 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 	<div class="header">
 		<div class="fade">
-			<img th:src="@{/images/svg/logo.svg}">
+			<img class="logo" th:src="@{/images/png/Logo.png}"alt="Image" height="2" width="42">
 			<div class="bgBlack"></div>
-			<h1>HAMBURGERIA RAVA</h1>
+			<h1>ENJOY FITNESS-CLUB</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 				fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 				deserunt mollit anim id est laborum</p>
 		</div>
-		<img th:src="@{/images/png/rava.jpeg}">
+			<img th:src="@{/images/jpeg/Enjoy.jpg}">
 	</div>
 
 	<div class="boxes">
 		<a class="box" href="prenotazione/prenotazioneForm" th:href="@{/prenota}">
-			<img th:src="@{/images/png/rava.jpeg}">
+			<img th:src="@{/images/jpeg/PrenotaCampo.jpg}">
 			<div class="bg"></div>
-			<h1 th:text="#{home.prenotaTavolo}">Menu</h1>
+			<h1 th:text="#{home.prenotaCampo}">Campo</h1>
 			<p>Lorem Ipsum dolorit sit amet</p>
 			<div class="bottomBar">
-				<h1 th:text="#{home.prenotaTavolo}">Prenota</h1>
+				<h1 th:text="#{home.prenotaCampo}">Prenota</h1>
 			</div>
 		</a>
 
-		<a th:href="@{/ordinaProdotto}"  href="procoDio" class="box">
-			<img th:src="@{/images/png/rava.jpeg}">
+		<a th:href="@{/effetuaAbbonamento}" class="box">
+			<img th:src="@{/images/jpeg/Abbonamento.jpeg}">
 			<div class="bg"></div>
-			<h1 th:text="#{box.Order2}">Ordina</h1>
+			<h1 th:text="#{box.Abbonamento}">Effettua Abbonamento</h1>
 			<p>Lorem Ipsum dolorit sit amet</p>
 			<div class="bottomBar">
-				<h1 th:text="#{box.Order2}">Ordina</h1>
+				<h1 th:text="#{box.Abbonamento}">Abbonati</h1>
 			</div>
 		</a>
 	</div>

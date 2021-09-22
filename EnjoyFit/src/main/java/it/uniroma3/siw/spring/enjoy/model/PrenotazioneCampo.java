@@ -2,7 +2,6 @@ package it.uniroma3.siw.spring.enjoy.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
