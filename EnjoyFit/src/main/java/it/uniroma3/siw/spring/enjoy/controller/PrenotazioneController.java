@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.spring.enjoy.controller.validator.PrenotazioneCampoValidator;
 import it.uniroma3.siw.spring.enjoy.model.Cliente;
 import it.uniroma3.siw.spring.enjoy.model.Credentials;
 import it.uniroma3.siw.spring.enjoy.model.PrenotazioneCampo;
 import it.uniroma3.siw.spring.enjoy.service.CredentialsService;
 import it.uniroma3.siw.spring.enjoy.service.PrenotazioneCampoService;
-import it.uniroma3.siw.spring.rava.controller.validator.PrenotazioneCampoValidator;
 
 @Controller
 public class PrenotazioneController {

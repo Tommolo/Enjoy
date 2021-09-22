@@ -1,4 +1,4 @@
-package it.uniroma3.siw.spring.rava.controller.validator;
+package it.uniroma3.siw.spring.enjoy.controller.validator;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

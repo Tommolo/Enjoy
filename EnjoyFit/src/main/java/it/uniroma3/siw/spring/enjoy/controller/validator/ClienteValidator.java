@@ -1,4 +1,4 @@
-package it.uniroma3.siw.spring.rava.controller.validator;
+package it.uniroma3.siw.spring.enjoy.controller.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

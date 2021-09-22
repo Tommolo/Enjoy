@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="fogliCss/user.css" rel="stylesheet">
+<head th:replace="fragments/fragment.html :: head(title='Pagina utente')">
+	<link rel="icon" href="/images/svg/logo.svg" type="image/icon type">
+</head>
+<body>
+   <nav th:replace="fragments/fragment.html :: intestazione"></nav>
+   
+   <section th:if="${utente}" th:object="${utente}">
+   	<div class="title">
+   		<p><b>Pagina personale di </b><b th:text="*{nome} + ' ' + *{cognome}">Mario Rossi</b></p>
+   	</div>
+   	<div class="box">
+   	<div class="info">
+   		<div class="element">
+   			<b>Nome: </b><span th:text="*{nome} + ' ' + *{cognome}">Nome e Cognome</span> 
+   		</div>
+   		<div class="element">
+   			<b>E-mail: </b><span th:text="*{email}">email</span> 
+   		</div>
+   		<div class="element">
+   			<b>Telefono: </b><span th:text="*{telefono}">telefono</span> 
+   		</div>
+   	</div>
+   	<div class="info">
+   		<div class ="element">
+   			<a href="prenotazioni" th:href="@{/prenotazioni}"
+   				th:text="#{tendina.prenotazioni}">Gestisci le prenotazioni dei campi</a>
+   		</div>
+   		<div class ="element">
+   			<a href="/#" th:href="@{/#}" 
+				th:text="#{tendina.gestisciAbbonamenti}">Gestisci gli abbonamenti</a>
+   		</div>
+   		
+   		</div>
+   	</div>
+   </section>
+</body>
+</html>

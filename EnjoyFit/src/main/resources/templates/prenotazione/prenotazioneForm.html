@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-1"><label>Fascia oraria:</label></div>
 				<div class="col-2"><select id="orario" th:field="*{orario}" required>
-					<option th:each="orario : ${T(it.uniroma3.siw.spring.rava.model.FasciaOraria).values()}" 
+					<option th:each="orario : ${T(it.uniroma3.siw.spring.enjoy.model.FasciaOraria).values()}" 
 							th:value="${orario}" th:text="${orario.getValue()}" style="font-size:16.5px"></option>
       			</select>
       			<div th:if="${#fields.hasErrors('orario')}" th:errors="*{orario}"></div>
