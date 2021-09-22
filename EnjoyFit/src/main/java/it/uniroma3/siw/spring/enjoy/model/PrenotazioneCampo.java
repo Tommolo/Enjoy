@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,6 +42,8 @@ public class PrenotazioneCampo {
 	@Column(nullable = false)
 	private String commento;
 	
+	@ManyToOne(fetch = FetchType.EAGER)	
+	private TipologiaCampo tipoCampo;
 	@ManyToOne
 	@JoinColumn(name = "utenti_id")
 	private Cliente cliente;

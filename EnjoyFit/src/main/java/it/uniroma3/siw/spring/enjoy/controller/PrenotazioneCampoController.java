@@ -21,7 +21,7 @@ import it.uniroma3.siw.spring.enjoy.service.CredentialsService;
 import it.uniroma3.siw.spring.enjoy.service.PrenotazioneCampoService;
 
 @Controller
-public class PrenotazioneController {
+public class PrenotazioneCampoController {
 	
 	@Autowired
 	private PrenotazioneCampoService prenotazioneService;

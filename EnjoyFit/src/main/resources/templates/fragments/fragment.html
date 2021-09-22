@@ -16,7 +16,11 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 				<a href="/authentication/loginForm" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
 				<a href="/authentication/registrationForm" th:href="@{/register}" sec:authorize="isAnonymous()"
 				th:text="#{tendina.registrati}">Registrati</a>
-				<a href="user" th:href="@{/utente}" sec:authorize="isAuthenticated()">Utente</a>
+				<span
+				sec:authorize="hasAuthority('DEFAULT')"> <a href="user" th:href="@{/utente}" sec:authorize="isAuthenticated()">Utente</a></span>
+				<span
+				sec:authorize="hasAuthority('ADMIN')"><a href="areaAdmin"
+				th:href="@{/admin/areaAdmin}">Amministratore</a></span>
 				<a href="home" th:href="@{/logout}" sec:authorize="isAuthenticated()">Esci</a>
 			</div>
 		</div>
@@ -28,9 +32,9 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 		<div class="nameAndMenu">
 			<a href="home" th:href="@{/home}"><h1>Enjoy Fitness</h1></a>
 			<ul>
-				<li><a th:href="@{/menu}">Campi</a></li>
-				<li><a th:href="@{/ordinaProdotto}" >Abbonamenti</a></li>
-				<li><a href="https://www.google.it/maps/place/Rav%C3%A0+Hamburgeria+%F0%9F%8D%94/@41.8436084,12.4856734,17.23z/data=!4m5!3m4!1s0x13258ba7ce16ad19:0xfa26c275bce9bf5b!8m2!3d41.8436924!4d12.4878231" th:text="#{navbar.dovesiamo}">Dove Siamo</a></li>
+				<li><a th:href="@{/tipoCampi}">Campi</a></li>
+				<li><a th:href="@{/#}" >Abbonamenti</a></li>
+				<li><a href="https://www.google.com/search?q=enjoy%20fitness%20club&oq=en&aqs=chrome.0.69i59j69i57j69i59l2j69i61j69i60l3.1143j0j7&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:14&tbm=lcl&sxsrf=AOaemvIb0yq3XiZ58Y58858Cumd05f6zfw:1632301167675&rflfq=1&num=10&rldimm=4806805999417495716&lqi=ChJlbmpveSBmaXRuZXNzIGNsdWJI1Me14eeAgIAIWh4QABABEAIYABgCIhJlbmpveSBmaXRuZXNzIGNsdWKSAQ5zcG9ydHNfY29tcGxleJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSTGJtTlVhVFYzUlJBQqoBGhABKhYiEmVuam95IGZpdG5lc3MgY2x1YigH&ved=2ahUKEwj1v4_am5LzAhUPDewKHTMsA8EQvS56BAgEEEI&rlst=f#rlfi=hd:;si:4806805999417495716,l,ChJlbmpveSBmaXRuZXNzIGNsdWJI1Me14eeAgIAIWh4QABABEAIYABgCIhJlbmpveSBmaXRuZXNzIGNsdWKSAQ5zcG9ydHNfY29tcGxleJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSTGJtTlVhVFYzUlJBQqoBGhABKhYiEmVuam95IGZpdG5lc3MgY2x1YigH;mv:[[45.679774599999995,13.721193099999999],[41.5729433,10.431999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14" th:text="#{navbar.dovesiamo}">Dove Siamo</a></li>
 				<li><a href="#" th:text="#{navbar.contattaci}">Contatti</a></li>
 			</ul>
 		</div>
@@ -62,7 +66,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 			<div id="pagine">
 				<p th:text="#{home.pagineUtili}">Pagine utili</p>
 				<ul>
-					<li><a th:href="@{/ordinaProdotto}" th:text="#{navbar.prenota}">Ordine</a></li>
+					<li><a th:href="@{/#}" th:text="#{navbar.prenota}">Abbonamento</a></li>
 
 					<li><a href ="#">Abbonamenti</a></li>
 					<li><a th:href="@{/prenota}" th:text="#{home.prenotaCampo}">Prenota Campo</a></li>
@@ -77,7 +81,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 						<li th:text="#{home.cap}">Cap:</li>
 						<li>
 							<a id="posizione"  th:text="#{home.maps}"
-							href="https://www.google.it/maps/place/Rav%C3%A0+Hamburgeria+%F0%9F%8D%94/@41.8436084,12.4856734,17.23z/data=!4m5!3m4!1s0x13258ba7ce16ad19:0xfa26c275bce9bf5b!8m2!3d41.8436924!4d12.4878231">
+							href="https://www.google.com/search?q=enjoy%20fitness%20club&oq=en&aqs=chrome.0.69i59j69i57j69i59l2j69i61j69i60l3.1143j0j7&sourceid=chrome&ie=UTF-8&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14&tbm=lcl&sxsrf=AOaemvIb0yq3XiZ58Y58858Cumd05f6zfw:1632301167675&rflfq=1&num=10&rldimm=4806805999417495716&lqi=ChJlbmpveSBmaXRuZXNzIGNsdWJI1Me14eeAgIAIWh4QABABEAIYABgCIhJlbmpveSBmaXRuZXNzIGNsdWKSAQ5zcG9ydHNfY29tcGxleJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSTGJtTlVhVFYzUlJBQqoBGhABKhYiEmVuam95IGZpdG5lc3MgY2x1YigH&ved=2ahUKEwj1v4_am5LzAhUPDewKHTMsA8EQvS56BAgEEEI&rlst=f&fll=0,0&fspn=4.106831299999996,3.2891940999999996&fz=0&sll=0,0&sspn=4.106831299999996,3.2891940999999996&sz=0#rlfi=hd:;si:4806805999417495716,l,ChJlbmpveSBmaXRuZXNzIGNsdWJI1Me14eeAgIAIWh4QABABEAIYABgCIhJlbmpveSBmaXRuZXNzIGNsdWKSAQ5zcG9ydHNfY29tcGxleJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSTGJtTlVhVFYzUlJBQqoBGhABKhYiEmVuam95IGZpdG5lc3MgY2x1YigH;mv:[[45.40668377731903,11.891501851572903],[45.40632382268097,11.8909891484271]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14">
 								Apri in maps
 							</a>
 

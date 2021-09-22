@@ -11,6 +11,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import static it.uniroma3.siw.spring.enjoy.model.Credentials.ADMIN_ROLE;
+
+
 //import static it.uniroma3.siw.spring.model.Credentials.ADMIN_ROLE;
 import javax.sql.DataSource;
 
@@ -18,6 +21,7 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 	
+
 	@Autowired
     DataSource datasource;
 	
@@ -32,14 +36,12 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                  * accedere alla pagina di composizione dell'ordine o della prenotazione (ad esempio) possano entrare
                  * solo gli utenti loggati
                  * **/
-                .antMatchers(HttpMethod.GET, "/", "/home", "/menu/**", "/login", "/register", "/css/**", "/images/**", "/fogliCss/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/","/tipoEsami","/tipoEsame/{id}", "/login", "/register", "/css/**", "/images/**", "/fogliCss/**").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
-
-                /**
-                 * operazioni per gli admin (se decidiamo di aggiungere questa possibilità
-                 */
-
+                // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**
+                .antMatchers(HttpMethod.GET, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
+                .antMatchers(HttpMethod.POST, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
                 // tutti gli utenti autenticati possono accere alle pagine rimanenti 
                 .anyRequest().authenticated()
 
