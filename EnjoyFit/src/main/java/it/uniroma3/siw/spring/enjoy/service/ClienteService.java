@@ -3,14 +3,14 @@ package it.uniroma3.siw.spring.enjoy.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.spring.enjoy.model.Cliente;
-import it.uniroma3.siw.spring.enjoy.model.Credentials;
 import it.uniroma3.siw.spring.enjoy.repository.ClienteRepository;
-import it.uniroma3.siw.spring.enjoy.repository.CredentialsRepository;
 
 @Service
 public class ClienteService {
@@ -18,8 +18,7 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepo;
 	
-	@Autowired
-	private CredentialsRepository credRepo;
+	
 	
 	/*
 	 * Memorizzazione di un cliente all'interno del database

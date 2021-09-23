@@ -45,7 +45,7 @@ section {
 
 
 </style>
-<head th:replace="fragments/fragment.html :: head(title='Pagina utente')">
+<head th:replace="fragments/fragment.html :: head(title='Pagina admin')">
 	<link rel="icon" href="/images/svg/logo.svg" type="image/icon type">
 </head>
 <body>
@@ -53,7 +53,7 @@ section {
    
    <section th:if="${admin}" th:object="${admin}">
    	<div class="title">
-   		<p><b>Pagina personale dell'Amministratore </b><b th:text="*{nome} + ' ' + *{cognome}">Mario Rossi</b></p>
+   		<p><b>Pagina Personale dell'Amministratore: </b><b th:text="*{nome} + ' ' + *{cognome}">Mario De Lillo</b></p>
    	</div>
    	<div class="box">
    	<div class="info">
@@ -69,12 +69,12 @@ section {
    	</div>
    	<div class="info">
    		<div class ="element">
-   			<a href="prenotazioni" th:href="@{/prenotazioni}"
-   				th:text="#{tendina.prenotazioni}">Gestisci le prenotazioni dei campi</a>
+   			<a href="inserimento" th:href="@{/#}"
+   				th:text="#{tendina.inserimentoTipoCampo}">Inserisci una nuova tipologia di campo</a>
    		</div>
    		<div class ="element">
    			<a href="/#" th:href="@{/#}" 
-				th:text="#{tendina.gestisciAbbonamenti}">Gestisci gli abbonamenti</a>
+				th:text="#{tendina.inserimentoTipoAbbonamento}">Inserisci un nuovo abbonamento</a>
    		</div>
    		
    		</div>
