@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/fogliCss/prenotazione/prenotazioni.css}">
+<head th:replace="fragments/fragment.html :: head(title='Campi')"></head>
+  <body>
+  
+  	<nav th:replace="fragments/fragment.html :: intestazione"></nav>
+  
+      <section>
+      	<div class="list">
+          <p><b>Lista dei Campi</b></p>
+          <ul>
+			<li th:each="tipoCampo : ${tipoCampi}">
+				<a href="tipoCampo.html" 
+				   th:href="@{'/tipoCampo' + '/' + ${tipoCampo.id}}"
+				   th:text="${tipoCampo.nome}">Titolo</a>
+				<span class ="elimina" >
+					<a sec:authorize="hasAuthority('ADMIN')" th:href="@{'/admin/tipoCampo/' + ${tipoCampo.id}}" 
+						th:text="Elimina">Elimina</a></span>
+			</li>
+		</ul>
+        </div>
+        <div class="button"><a href="user" th:href="@{/admin/areaAdmin}"><button type="button" id="goBack">Indietro</button></a></div>
+       </section>
+      </body>
+     </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/fogliCss/prenotazione/prenotazione.css}">
+<head th:replace="fragments/fragment.html :: head(title='Tipologia Campo')">
+</head>
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  
+  <nav th:replace="fragments/fragment.html :: intestazione"></nav>
+  
+      <section>
+      <div th:if="${tipoCampo}" th:object="${tipoCampo}">
+        <h1 class="title"><b>Tipologia Campo:</b></h1>
+        <h1 class = "title" th:text="*{nome}">xx</h1>
+      <div class = "row">
+        <div class = "column"><b>Descrizione: </b><span class = "infot" th:text="*{descrizione}">xx</span></div>
+        <div class = "column"><b>Numero di persone: </b><span class = "infot" th:text="*{numeroPersone}">xx</span></div>
+      </div>
+      </div>
+      <div class="button">
+      	<a href="home" th:href="@{/home}"><button type="button" id="goBack">Indietro</button></a>
+      </div>
+      </section>
+  </body>
+</html>

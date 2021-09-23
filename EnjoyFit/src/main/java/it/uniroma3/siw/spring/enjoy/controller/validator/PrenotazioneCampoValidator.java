@@ -18,11 +18,6 @@ public class PrenotazioneCampoValidator implements Validator {
 	
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 
-	/**
-	 * l'oggetto si occupa di controllare che la prenotazione sia valida, ovvero controllare che 
-	 * il numero massimo di persone permesso all'interno del ristorante non venga superato con la nuova prenotazione
-	 */
-	
 	@Autowired
 	private PrenotazioneCampoService prenotazioneService;
 	
@@ -35,11 +30,6 @@ public class PrenotazioneCampoValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		PrenotazioneCampo prenotazione = (PrenotazioneCampo) o;
 		LocalDate data = prenotazione.getData();
-		
-		//controlla che i prenotanti siano maggiori di 0
-		if(prenotazione.getNumeroPersone() <= 0) {
-			errors.rejectValue("numeroPersone", "negativo");
-		}
 		
 		//controlla che la data scelta sia uguale o maggiore di quella di oggi
 		if (data.isBefore(LocalDate.now())) {
