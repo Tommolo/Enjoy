@@ -19,7 +19,7 @@
 				<div class="col-2"><input type="date" th:field="*{data}" style="font-size:16.5px" required/></div>
 				<div th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></div>
 			</div>	
-			<div class="row">
+			<div class="row">	
 				<div class="col-1"><label>Fascia oraria:</label></div>
 				<div class="col-2"><select id="orario" th:field="*{orario}" required>
 					<option th:each="orario : ${T(it.uniroma3.siw.spring.enjoy.model.FasciaOraria).values()}" 
@@ -28,11 +28,19 @@
       			<div th:if="${#fields.hasErrors('orario')}" th:errors="*{orario}"></div>
       			</div>
       		</div>
-      		<div class ="row">
-				<div class="col-1"><label>Numero Persone:</label></div>
-				<div class="col-2"><input type="number" th:field="*{numeroPersone}" style="font-size:16.5px" required/></div>
-				<div th:if="${#fields.hasErrors('numeroPersone')}" th:errors="*{numeroPersone}"></div>
-			</div>
+      		<div class="row">
+					<div class="col-1">
+						<label>Tipologia di Campo:</label>
+					</div>
+					<div class="col-2">
+						<select id="tipoCampo" th:field="*{tipoCampo}">
+							<option th:each="tipoCampo : ${tipoCampi}"
+								th:value="${tipoCampo.id}" th:text="${tipoCampo.nome}"></option>
+						</select>
+								<div th:if="${#fields.hasErrors('tipoCampo')}" th:errors="*{tipoCampo}"></div>
+								
+					</div>
+				</div>
 			<div class ="row">
 				<div class="col-1"><label>Commento:</label></div>
 				<div class="col-2"><textarea th:field="*{commento}" class="bio" style="height:200px; width:50%; font-size:16.5px" /></textarea></div>

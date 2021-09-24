@@ -17,8 +17,10 @@ import it.uniroma3.siw.spring.enjoy.controller.validator.PrenotazioneCampoValida
 import it.uniroma3.siw.spring.enjoy.model.Cliente;
 import it.uniroma3.siw.spring.enjoy.model.Credentials;
 import it.uniroma3.siw.spring.enjoy.model.PrenotazioneCampo;
+import it.uniroma3.siw.spring.enjoy.model.TipologiaCampo;
 import it.uniroma3.siw.spring.enjoy.service.CredentialsService;
 import it.uniroma3.siw.spring.enjoy.service.PrenotazioneCampoService;
+import it.uniroma3.siw.spring.enjoy.service.TipologiaCampoService;
 
 @Controller
 public class PrenotazioneCampoController {
@@ -29,6 +31,9 @@ public class PrenotazioneCampoController {
 	private CredentialsService credentialsService;
 	@Autowired
 	private PrenotazioneCampoValidator prenotazioneValidator;
+	
+	@Autowired
+	private TipologiaCampoService tipoService;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -58,6 +63,7 @@ public class PrenotazioneCampoController {
 		PrenotazioneCampo prenotazione = new PrenotazioneCampo();
 		logger.debug("HAI CREATO la PRENOTAZIONE NUMERO : ", prenotazione.getId());
 		model.addAttribute("prenotazione",prenotazione);
+		model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
 		return "prenotazione/prenotazioneForm";
 		
 	}
@@ -75,6 +81,7 @@ public class PrenotazioneCampoController {
 			logger.debug("Prenotazion salvata con id: " + prenotazione.getId());
 			logger.debug("Prenotazioni salvate in fascia: " + prenotazioneService.getByDataAndOrario(prenotazione.getData(), prenotazione.getOrario()).size());
 			model.addAttribute("prenotazione", prenotazione);
+			model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
 			return ("prenotazione/prenotazione") ;
 		}
 		return "prenotazione/prenotazioneForm";
@@ -91,6 +98,7 @@ public class PrenotazioneCampoController {
 			return "error";
 		}
 		model.addAttribute("prenotazione", p);
+		model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
 		return "prenotazione/prenotazione";
 	}
 	
@@ -133,6 +141,7 @@ public class PrenotazioneCampoController {
 	    	return "error";
 	    }
 		model.addAttribute("prenotazione", p);
+		model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
 		return "prenotazione/prenotazioneAggiorna";
 	}
 	
@@ -151,6 +160,7 @@ public class PrenotazioneCampoController {
 		}
 		
 		model.addAttribute("prenotazioni", this.prenotazioneService.getByCliente(cliente));
+		model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
 		return "prenotazione/prenotazioni";
 	}
 }
