@@ -74,5 +74,7 @@ public class PrenotazioneCampo {
 		this.data = p.getData();
 		this.numeroPersone = p.getNumeroPersone();
 	}
-
+	
+	
+	
 }

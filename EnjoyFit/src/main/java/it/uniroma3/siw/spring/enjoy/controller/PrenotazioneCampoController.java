@@ -17,7 +17,6 @@ import it.uniroma3.siw.spring.enjoy.controller.validator.PrenotazioneCampoValida
 import it.uniroma3.siw.spring.enjoy.model.Cliente;
 import it.uniroma3.siw.spring.enjoy.model.Credentials;
 import it.uniroma3.siw.spring.enjoy.model.PrenotazioneCampo;
-import it.uniroma3.siw.spring.enjoy.model.TipologiaCampo;
 import it.uniroma3.siw.spring.enjoy.service.CredentialsService;
 import it.uniroma3.siw.spring.enjoy.service.PrenotazioneCampoService;
 import it.uniroma3.siw.spring.enjoy.service.TipologiaCampoService;

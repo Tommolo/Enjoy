@@ -44,9 +44,11 @@ public class PrenotazioneCampoValidator implements Validator {
 		if((data.isEqual(LocalDate.now()) && (ora.isAfter(oraPren)))) {
 			errors.rejectValue("orario", "indietro");
 		}
+		// scorro sulla lista di prenotazioni con stessa data e orario di quelle che sto selezionando anche io nella form
+		// eseguo un' istruzione condizionale per verificare se la prenotazione di quel campo per quella data e ora è già avvenuta
 		for(PrenotazioneCampo p : prenotazioneService.getByDataAndOrario(data, orario)) {
 			if(p.getTipoCampo().equals(prenotazione.getTipoCampo())) {
-				errors.rejectValue("tipoCampo", "riseleziona");
+				errors.rejectValue("tipoCampo", "riseleziona"); // mando un messaggio di errore
 			}
 		}
 	}
