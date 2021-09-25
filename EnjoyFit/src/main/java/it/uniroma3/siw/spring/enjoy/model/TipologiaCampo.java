@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -34,7 +35,7 @@ public class TipologiaCampo {
 	private int prezzo;
 	@Column(nullable = false)
 	private int numeroPersone;
-	@Column(nullable=true)
+	@Column(nullable = true)
 	private String foto;
 	
 	@OneToMany(mappedBy = "tipoCampo", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -45,7 +46,12 @@ public class TipologiaCampo {
 		this.descrizione = d;
 	}
 	
-	
+	 @Transient
+	    public String getPhotosImagePath() {
+	        if (foto.equals(null) || id.equals(null)) return null;
+	         
+	        return "/uploadable/tipoCampi/" + id + "/" + foto;
+	    }
 	
 	
 

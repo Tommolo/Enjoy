@@ -8,7 +8,11 @@
 	
 	<section>
 		<div class="title"><p><b>Inserisci I Dati della tipologia di campo</b></p></div>
-		<form th:action="@{/admin/tipoCampo}" method="POST" th:object="${tipoCampo}">
+		<form th:action="@{/admin/tipoCampo}" method="POST" th:object="${tipoCampo}" enctype="multipart/form-data">
+		<div th:if="${#fields.hasGlobalErrors()}">
+				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"
+					style="text-align: center; color: red">...</p>
+			</div>
       		<div class ="row">
 					<div class="col-1">
 						<label>Nome:</label>
@@ -26,6 +30,14 @@
 				<div class="col-2"><textarea th:field="*{descrizione}" class="bio" style="height:200px; width:50%; font-size:16.5px" /></textarea></div>
 				<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
 			</div>
+			<div class="row">
+					<div class="col-1">
+						<label>Foto:</label>
+					</div>
+					<div class="col-2">
+						<input type="file" name="image" accept="image/png, image/jpeg" />
+					</div>
+				</div>
 			<div class ="row">
 				<span><button type="submit" id="invio">Invio</button></span>
 				<span><a href="home" th:href="@{/area/admin}"><button type="button" id="goBack">Indietro</button></a></span>

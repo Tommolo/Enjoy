@@ -26,9 +26,9 @@ public class TipologiaCampoValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "prezzo", "required");
 	
 		TipologiaCampo tipoCampo = (TipologiaCampo) o;
-		//controlla che i prenotanti siano maggiori di 0
+		//controlla che le persone che possono occupare il campo siano maggiori di 0
 		if(tipoCampo.getNumeroPersone() <= 0) {
-			errors.rejectValue("numeroPersone", "negativo");
+			errors.reject("numeroPersone", "Numero persone negativo riseleziona");
 		}
 		
 

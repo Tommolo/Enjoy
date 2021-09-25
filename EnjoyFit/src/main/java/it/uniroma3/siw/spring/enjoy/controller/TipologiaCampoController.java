@@ -1,18 +1,23 @@
 package it.uniroma3.siw.spring.enjoy.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.enjoy.controller.validator.TipologiaCampoValidator;
+import it.uniroma3.siw.spring.enjoy.misc.FileUploadUtil;
 import it.uniroma3.siw.spring.enjoy.model.TipologiaCampo;
 import it.uniroma3.siw.spring.enjoy.service.TipologiaCampoService;
-
 
 
 
@@ -79,12 +84,14 @@ public class TipologiaCampoController {
     
     @RequestMapping(value = "/admin/tipoCampo", method = RequestMethod.POST)
     public String addCampo(@ModelAttribute("tipoEsame") TipologiaCampo tipoCampo, 
-    									Model model, BindingResult bindingResult) {
+    									Model model,BindingResult bindingResult, @RequestParam("image") MultipartFile multipartFile) throws IOException {
     	this.tipologiaValidator.validate(tipoCampo, bindingResult);
         if (!bindingResult.hasErrors()) {
-        	
-        	this.tipologiaService.inserisci(tipoCampo);
-        	
+        	  String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+              tipoCampo.setFoto(fileName);
+              this.tipologiaService.inserisci(tipoCampo);
+        	  String uploadDir = "uploadable/tipoCampi/" + tipoCampo.getId();
+              FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             model.addAttribute("tipoCampi", this.tipologiaService.tuttiOrdinati());
             return "tipoCampi";
         }
