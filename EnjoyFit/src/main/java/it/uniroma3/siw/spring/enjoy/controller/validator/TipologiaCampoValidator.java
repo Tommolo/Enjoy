@@ -21,15 +21,13 @@ public class TipologiaCampoValidator implements Validator {
 
 	@Override
 	public void validate(Object o, Errors errors) {
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "numeroPersone", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "prezzo", "required");
 	
-		TipologiaCampo tipoCampo = (TipologiaCampo) o;
-		//controlla che le persone che possono occupare il campo siano maggiori di 0
-		if(tipoCampo.getNumeroPersone() <= 0) {
-			errors.reject("numeroPersone", "Numero persone negativo riseleziona");
-		}
+	
 		
 
 		if (!errors.hasErrors()) {

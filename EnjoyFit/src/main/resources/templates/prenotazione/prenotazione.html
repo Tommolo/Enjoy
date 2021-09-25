@@ -15,7 +15,8 @@
       <div class = "row">
         <div class = "column"><b>Data: </b><span class = "infot" th:text="*{data.toString()}">xx</span></div>
         <div class = "column"><b>Orario: </b><span class = "infot" th:text="*{orario.getValue()}">xx</span></div>
-        <div class = "column"><b>Numero di persone: </b><span class = "infot" th:text="*{numeroPersone}">xx</span></div>
+        <div class = "column"><b>Numero di persone: </b><span class = "infot" th:text="*{tipoCampo.numeroPersone}">xx</span></div>
+          <div class = "column"><b>Prezzo: </b><span class = "infot" th:text="*{tipoCampo.prezzo} + ' €'">xx</span></div>
         <div class = "column"><b>Commento: </b><span class = "infot" th:text="*{commento}">xx</span></div>
       </div>
       </div>
