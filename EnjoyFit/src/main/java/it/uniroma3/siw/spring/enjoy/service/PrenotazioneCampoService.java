@@ -42,6 +42,11 @@ public class PrenotazioneCampoService {
 	}
 	
 	@Transactional
+	public List<PrenotazioneCampo> tutti() {
+		return (List<PrenotazioneCampo>)this.prenotazioneRepository.findAll();
+	}
+	
+	@Transactional
 	public List<PrenotazioneCampo> getByDataAndOrario(LocalDate data, FasciaOraria orario) {
 		return (List<PrenotazioneCampo>)this.prenotazioneRepository.findByDataAndOrario(data, orario);
 	}

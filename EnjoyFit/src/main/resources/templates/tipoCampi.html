@@ -21,7 +21,8 @@
 			</li>
 		</ul>
         </div>
-        <div class="button"><a href="user" th:href="@{/admin/areaAdmin}"><button type="button" id="goBack">Indietro</button></a></div>
+         <div class="button"><a sec:authorize="hasAuthority('ADMIN')" href="user" th:href="@{/admin/areaAdmin}"><button type="button" id="goBack">Area Admin</button></a></div>
+        <div class="button"><a href="user" th:href="@{/home}"><button type="button" id="goBack">Indietro</button></a></div>
        </section>
       </body>
      </html>

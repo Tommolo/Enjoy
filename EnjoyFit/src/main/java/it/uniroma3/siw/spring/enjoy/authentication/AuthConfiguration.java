@@ -36,7 +36,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                  * accedere alla pagina di composizione dell'ordine o della prenotazione (ad esempio) possano entrare
                  * solo gli utenti loggati
                  * **/
-                .antMatchers(HttpMethod.GET, "/","/tipoCampi","/tipoCampo/{id}", "/login", "/register", "/css/**", "/images/**", "/fogliCss/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/","/tipoCampi","/tipoCampo/{id}", "/login", "/register","/uploadable/**", "/css/**", "/images/**", "/fogliCss/**").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
                 // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**

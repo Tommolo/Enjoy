@@ -29,8 +29,7 @@ public class PrenotazioneCampoController {
 	@Autowired
 	private CredentialsService credentialsService;
 	@Autowired
-	private PrenotazioneCampoValidator prenotazioneValidator;
-	
+	private PrenotazioneCampoValidator prenotazioneValidator;	
 	@Autowired
 	private TipologiaCampoService tipoService;
 	
@@ -101,6 +100,33 @@ public class PrenotazioneCampoController {
 		return "prenotazione/prenotazione";
 	}
 	
+	
+	
+	
+	/*****************************************************
+	 * ****************ADMIN*******************************
+	 ***********************************************************/
+	
+	/***
+	 * l'admin vuole visualizzare i dati di una determinata prenotazione,
+	 * anche passata
+	 */
+	@RequestMapping(value="/prenotazioneAdmin/{id}", method=RequestMethod.GET) 
+	public String getPrenotazioneAdmin(Model model, @PathVariable("id") Long id) {
+		PrenotazioneCampo p = this.prenotazioneService.prenotazionePerId(id);
+		model.addAttribute("prenotazione", p);
+		model.addAttribute("tipoCampi",this.tipoService.tuttiOrdinati());
+		return "prenotazione/prenotazione";
+	}
+	
+	/**
+	 * l'admin visualizza tutte le prenotazioni
+	 */
+	@RequestMapping(value="/admin/prenotazioni", method=RequestMethod.GET) 
+	public String getTuttePrenotazioni(Model model) {
+		model.addAttribute("prenotazioni", this.prenotazioneService.tutti());
+		return "prenotazione/prenotazioniAdmin";
+	}
 	/**
 	 * l'utente visualizza tutte le sue prenotazioni
 	 */
@@ -113,6 +139,8 @@ public class PrenotazioneCampoController {
 		model.addAttribute("prenotazioni", this.prenotazioneService.getByCliente(cliente));
 		return "prenotazione/prenotazioni";
 	}
+	
+	
 	
 	/**
 	 * l'utente vuole eliminare una prenotazione
