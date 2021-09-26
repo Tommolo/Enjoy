@@ -10,20 +10,25 @@ section {
 }
 
 .list p {
-	font-size:30px;
+	font-size:50px;
 	text-align:center;
 }
 
 ul {
 	padding: 40px 25px 25px 775px;
-	font-size: 17px;
+	font-size: 30px;
 }
 
 .elimina {
-	padding-left: 250px;
+	padding-left: 210px;
 	padding-right: 10px;
 }
+.modifica {
+	 position: fixed;
+ 	 bottom: 60;
+ 	 padding-right:25px;
 
+}
 ul li a {
 	text-decoration: none;
 	color: black;

@@ -28,7 +28,8 @@
 }
 
 .fade img{
-	height: 20vh;
+  height: auto; 
+    width: 29%; 
 	top: 20%;
     z-index: 1;
 }

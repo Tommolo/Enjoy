@@ -14,7 +14,7 @@
 			<li th:each="prenotazione : ${prenotazioni}">
 				<a href="prenotazione.html" 
 				   th:href="@{'/prenotazione' + '/' + ${prenotazione.id}}" 
-				   th:text="'Prenotazione Campo da ' + ${prenotazione.tipoCampo.nome}">Nome</a>
+				   th:text=" ${prenotazione.tipoCampo.nome} +' ('+ ${prenotazione.data} +')'">Nome</a>
 				<span class ="elimina">
 					<a th:if="${prenotazione.isCorrente()}" th:href="@{'/elimina/prenotazione/' + ${prenotazione.id}}" 
 						th:text="Elimina">Elimina</a></span>
