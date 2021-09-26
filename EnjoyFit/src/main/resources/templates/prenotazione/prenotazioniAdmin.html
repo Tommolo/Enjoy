@@ -14,7 +14,7 @@
 			<li th:each="prenotazione : ${prenotazioni}">
 				<a href="prenotazione.html" 
 				   th:href="@{'/prenotazioneAdmin' + '/' + ${prenotazione.id}}" 
-				   th:text="'Prenotazione Campo da ' + ${prenotazione.tipoCampo.nome} + 'di '+ ${prenotazione.cliente.getNome()} + ' ' + ${prenotazione.cliente.getCognome()} ">Nome</a>
+				   th:text="'Prenotazione Campo da ' + ${prenotazione.tipoCampo.nome} + ' di '+ ${prenotazione.cliente.getNome()} + ' ' + ${prenotazione.cliente.getCognome()} ">Nome</a>
 			</li>
 		</ul>
         </div>
