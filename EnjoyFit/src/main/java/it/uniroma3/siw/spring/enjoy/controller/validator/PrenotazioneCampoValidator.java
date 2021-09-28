@@ -33,6 +33,7 @@ public class PrenotazioneCampoValidator implements Validator {
 		PrenotazioneCampo prenotazione = (PrenotazioneCampo) o;
 		LocalDate data = prenotazione.getData();
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "tipoCampo", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "commento", "required");
 		//controlla che la data scelta sia uguale o maggiore di quella di oggi
 		if (data.isBefore(LocalDate.now())) {
 			errors.rejectValue("data", "indietro");
