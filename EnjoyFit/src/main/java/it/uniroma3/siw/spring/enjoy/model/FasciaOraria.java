@@ -2,12 +2,12 @@ package it.uniroma3.siw.spring.enjoy.model;
 
 public enum FasciaOraria {
 	
-	DIECI("10-12", "11:30"),
-	DODICI("12-14", "13:30"),
-	QUATTORDICI("14-16", "16:30"),
-	DICIOTTO("18-20", "19:30"),
-	VENTI("20-22", "21:30"),
-	VENTIDUE("22-24", "23:30");
+	DIECI("10-12", "10:00"),
+	DODICI("12-14", "12:00"),
+	QUATTORDICI("14-16", "14:00"),
+	DICIOTTO("18-20", "18:00"),
+	VENTI("20-22", "20:00"),
+	VENTIDUE("22-24", "22:00");
 	
 	private String displayValue;
 	private String oraMax;

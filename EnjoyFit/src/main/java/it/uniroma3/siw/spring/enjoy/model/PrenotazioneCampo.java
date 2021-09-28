@@ -68,11 +68,10 @@ public class PrenotazioneCampo {
 		return this.data.isAfter(oggi);
 	}
 	
+	// della prenotazione è possibile modificare solo data ed ora
 	public void updatePrenotazione(PrenotazioneCampo p) {
 		this.orario = p.getOrario();
-		this.commento = p.getCommento();
 		this.data = p.getData();
-		this.numeroPersone = p.getNumeroPersone();
 	}
 	
 	

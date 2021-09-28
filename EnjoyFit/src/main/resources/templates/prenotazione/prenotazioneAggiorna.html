@@ -28,29 +28,13 @@
       			<div th:if="${#fields.hasErrors('orario')}" th:errors="*{orario}"></div>
       			</div>
       		</div>
-      		<div class="row">
-					<div class="col-1">
-						<label>Tipologia di Campo:</label>
-					</div>
-					<div class="col-2">
-						<select id="tipoCampo" th:field="*{tipoCampo}">
-							<option th:each="tipoCampo : ${tipoCampi}"
-								th:value="${tipoCampo.id}" th:text="${tipoCampo.nome}"></option>
-						</select>
-								<div th:if="${#fields.hasErrors('tipoCampo')}" th:errors="*{tipoCampo}"></div>
-								
-					</div>
+      		
 				</div>
-			<div class ="row">
-				<div class="col-1"><label>Commento:</label></div>
-				<div class="col-2"><textarea th:field="*{commento}" class="bio" style="height:200px; width:50%; font-size:16.5px" /></textarea></div>
-				<div th:if="${#fields.hasErrors('commento')}" th:errors="*{commento}"></div>
-			</div>
+		
 			<div class ="row">
 				<span><button type="submit" id="invio">Invio</button></span>
 				<span><a href="home" th:href="@{/home}"><button type="button" id="goBack">Indietro</button></a></span>
 			</div>
-		</div>
 		</form>
 		
 	  </section>
