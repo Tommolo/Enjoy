@@ -6,7 +6,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.spring.enjoy.model.PrenotazioneCampo;
 import it.uniroma3.siw.spring.enjoy.model.TipologiaCampo;
 import it.uniroma3.siw.spring.enjoy.service.TipologiaCampoService;
 
@@ -22,11 +21,14 @@ public class TipologiaCampoValidator implements Validator {
 
 	@Override
 	public void validate(Object o, Errors errors) {
-		TipologiaCampo tipoCampo= (TipologiaCampo) o;
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "numeroPersone", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "prezzo", "required");		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "prezzo", "required");
+	
+	
+		
 
 		if (!errors.hasErrors()) {
 			if (this.collezioneService.alreadyExists((TipologiaCampo)o)) {
