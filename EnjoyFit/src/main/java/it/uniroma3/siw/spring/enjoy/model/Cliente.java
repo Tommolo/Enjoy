@@ -42,6 +42,7 @@ public class Cliente {
 	
 	@OneToMany(mappedBy = "cliente")
 	private List<PrenotazioneCampo> prenotazioni;	//l'utente conosce tutte le sue prenotazioni
+													// l'admin quelle di tutti gli utenti
 	
 	
 	
