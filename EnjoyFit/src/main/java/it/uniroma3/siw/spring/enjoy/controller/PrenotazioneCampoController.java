@@ -57,6 +57,7 @@ public class PrenotazioneCampoController {
 	 */
 	@RequestMapping(value="/prenota", method=RequestMethod.GET)
 	public String nuovaPrenotazione(Model model) {
+		
 		PrenotazioneCampo prenotazione = new PrenotazioneCampo();
 		logger.debug("HAI CREATO la PRENOTAZIONE NUMERO : ", prenotazione.getId());
 		model.addAttribute("prenotazione",prenotazione);
