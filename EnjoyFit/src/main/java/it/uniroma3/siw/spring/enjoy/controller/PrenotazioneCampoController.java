@@ -178,8 +178,7 @@ public class PrenotazioneCampoController {
 		Cliente cliente = getCliente();
 		PrenotazioneCampo vecchia = this.prenotazioneService.getById(id);
 		
-		//aggiorno la prenotazione
-		this.prenotazioneValidator.validate(prenotazione, bindingResult);
+		
 		if (!bindingResult.hasErrors()) {
 			vecchia.updatePrenotazione(prenotazione);
 			this.prenotazioneService.inserisci(vecchia);
