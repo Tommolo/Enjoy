@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/fogliCss/registerForm.css}">
+<head th:replace="fragments/fragment.html :: head('Registrazione')"></head>
+<body>
+   <nav th:replace="fragments/fragment.html :: intestazione"></nav>
+   
+   <div class="form">
+   
+   <div id="title"><b>Registrazione Cliente</b></div>
+   
+   <form th:action="@{/register}" method="POST">
+    <div class="box">
+        <div class = "element">
+            <div><input type="text" placeholder="Username" required
+                       th:field="${credentials.username}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('credentials.username')}"
+                th:errors="${credentials.username}" ></div>
+        </div>
+        <div class = "element">
+            <div><input type="password" placeholder="Password" required
+                       th:field="${credentials.password}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('credentials.password')}"
+                th:errors="${credentials.password}" ></div>
+        </div>
+        <div class = "element">
+            <div><input type="text" placeholder="Nome" required
+                       th:field="${user.nome}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('user.nome')}"
+                th:errors="${user.nome}" ></div>
+        </div>
+        <div class = "element">
+            <div><input type="text" placeholder="Cognome" required
+                       th:field="${user.cognome}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('user.cognome')}"
+                th:errors="${user.cognome}" ></div>
+        </div>
+        <div class = "element">
+            <div><input type="text" placeholder="Email" required
+                       th:field="${user.email}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('user.email')}"
+                th:errors="${user.email}" ></div>
+        </div>
+       <div class = "element">
+            <div><input type="text" placeholder="Telefono" required
+                       th:field="${user.telefono}" style="font-size: 15px"/></div>
+            <div th:if="${#fields.hasErrors('user.telefono')}"
+                th:errors="${user.telefono}" ></div> 
+        </div> 
+        <div class = "element">
+            <button type="submit" style="font-size: 17px"><b>REGISTRA</b></button>
+        </div>
+    </div>
+	</form>
+  </div>
+</body>

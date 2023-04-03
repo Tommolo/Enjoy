@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment.html :: head(title='Login')">
+</head> 
+<body>
+<style>
+* {
+	margin: 0;
+}
+
+body {
+	font-family: Market Deco;
+}
+
+.form {
+	padding-top: 25vh;
+}
+
+#title {
+	text-align: center;
+	font-size: 35px;
+}
+
+#title p {
+	padding: 20px;
+}
+
+.box {
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	width: 50%;
+	padding: 14px 16px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.element {
+	 padding: 5px;
+	 vertical-align: middle;
+	 text-align: center;
+}
+
+input {
+	width: 50%;
+	height: 2vh;
+	border: solid;
+	border-color: #DCDCDC;
+	background-color: white;
+	outline: none;
+}
+
+input[type=password] {
+	font-family: sans-serif;
+}
+
+input[type=password]::placeholder {
+	font-family: Market Deco;
+}
+
+button {
+	width: 15%;
+	height: 2.5vh;
+	border: none;
+	border-radius: 5px;
+	background-color: white;
+	color: #00FA9A;
+}
+
+button:hover {
+	background-color: #00FA9A;
+	color: white;
+}
+</style>
+	<nav th:replace="fragments/fragment.html :: intestazione(index='/default')"></nav>
+	<div class="form">
+   <div id="title"><b>Login </b></div>
+   <div>
+   		<form th:action="@{/login}" method="POST">
+   			<div class="box">
+				<div class = "container">
+					<div class="element">
+						<span><input name="username" type="text" placeholder="Inserisci username" required 
+							style="font-size: 15px"/></span>
+					</div>		
+					<div class="element">
+						<span><input name="password" type="password" placeholder="Inserisci password" required 
+							style="font-size: 15px"/></span>
+					</div>
+					<div class="element">
+						<span><button type="submit"><b style="font-size: 17px">LOGIN</b></button></span>
+					</div>
+				</div>
+			</div>
+		</form>
+   </div>
+   </div>
+
+</body>

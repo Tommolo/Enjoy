@@ -1,0 +1,81 @@
+* {
+	margin:0;
+	font-family: adobe-gothic-std, sans-serif; 
+}
+
+section {
+	padding: 65px 50px 50px 50px;
+	font-family: adobe-gothic-std, sans-serif;
+	font-size:18px;
+}
+
+.list p {
+	font-size:50px;
+	text-align:center;
+}
+
+ul {
+	padding: 40px 25px 25px 775px;
+	font-size: 30px;
+}
+
+.elimina {
+	padding-left: 210px;
+	padding-right: 10px;
+}
+.modifica {
+	 position: fixed;
+ 	 bottom: 60;
+ 	 padding-right:25px;
+
+}
+ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+ul li a:hover {
+	text-decoration: none;
+	color: #A9A9A9;
+}
+
+.elimina a {
+	text-decoration: none;
+	color: red;
+}
+
+.elimina a:hover {
+	text-decoration: none;
+	color: #CD5C5C;
+}
+
+.modifica a {
+	color: #00CED1;
+}
+
+.modifica a:hover {
+	color: #7FFFD4;
+}
+
+.button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+button[type=button] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6.5px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+
+button[type=button]:hover {
+	background-color: red;
+	color: white;
+}

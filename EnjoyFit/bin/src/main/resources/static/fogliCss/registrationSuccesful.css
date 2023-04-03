@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+}
+
+body {
+	font-family: Market Deco;
+}
+
+.container {
+	text-align : center;
+	padding: 25vh;
+}
+
+.container p {
+	font-size: 25px;
+}

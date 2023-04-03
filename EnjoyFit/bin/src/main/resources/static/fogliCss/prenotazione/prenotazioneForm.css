@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+}
+
+section {
+	padding: 30px;
+	font-family: adobe-gothic-std, sans-serif;
+	font-size:18px;
+}
+
+
+.title
+{
+ border-bottom: solid;
+ border-width: 2px;
+  font-size: 2em;
+  margin-left: 5%;
+  margin-top: 4vh;
+  height: 10%;
+}
+form
+{
+	margin-left: 6%;
+}
+input[type=number],select{
+	 width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.pad {
+	padding: 20px 900px;
+}
+
+button[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6.5px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+button[type=submit]:hover {
+  background-color:  rgb(51, 255, 51);;
+  color: white;
+}
+
+button[type=button] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6.5px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+
+button[type=button]:hover {
+	background-color: red;
+	color: white;
+}
+
+.inserisci {
+  padding: 20px;
+}
+
+.col-1 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-2 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.but {
+	display:flex;
+	justify-content: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row a {
+	text-decoration: none;
+	color: red;
+}
+
+.row a:hover {
+	text-decoration: none;
+	color: #FF7F50;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+ 
+}

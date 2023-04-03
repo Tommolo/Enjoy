@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/fogliCss/prenotazione/prenotazioneForm.css}">
+<head th:replace="fragments/fragment.html :: head(title='Prenota')"></head>
+	<body>
+	
+	<nav th:replace="fragments/fragment.html :: intestazione"></nav>
+	
+	<section>
+	
+		<div class="title"><p><b>Inserisci i dati della prenotazione</b></p></div>
+		<form th:action="@{/prenota}" method="POST" th:object="${prenotazione}">
+			<div th:if="${#fields.hasGlobalErrors()}">
+  				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}" style="text-align: center">...</p>
+			</div>	
+		<div class="inserisci">
+			<div class ="row">
+				<div class="col-1"><label>Data:</label></div>
+				<div class="col-2"><input type="date" th:field="*{data}" style="font-size:16.5px" required/></div>
+				<div th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></div>
+			</div>	
+			<div class="row">	
+				<div class="col-1"><label>Fascia oraria:</label></div>
+				<div class="col-2"><select id="orario" th:field="*{orario}" required>
+					<option th:each="orario : ${T(it.uniroma3.siw.spring.enjoy.model.FasciaOraria).values()}" 
+							th:value="${orario}" th:text="${orario.getValue()}" style="font-size:16.5px"></option>
+      			</select>
+      			<div th:if="${#fields.hasErrors('orario')}" th:errors="*{orario}"></div>
+      			</div>
+      		</div>
+    
+      		<div class="row">
+					<div class="col-1">
+						<label>Tipologia di Campo:</label>
+					</div>
+					<div class="col-2">
+						<select id="tipoCampo" th:field="*{tipoCampo}">
+							<option th:each="tipoCampo : ${tipoCampi}"
+								th:value="${tipoCampo.id}" th:text="${tipoCampo.nome}"></option>
+						</select>
+								<div th:if="${#fields.hasErrors('tipoCampo')}" th:errors="*{tipoCampo}"></div>
+								
+					</div>
+				</div>
+			<div class ="row">
+				<div class="col-1"><label>Commento:</label></div>
+				<div class="col-2"><textarea th:field="*{commento}" class="bio" style="height:200px; width:50%; font-size:16.5px" /></textarea></div>
+				<div th:if="${#fields.hasErrors('commento')}" th:errors="*{commento}"></div>
+			</div>
+			<div class ="row">
+				<span><button type="submit" id="invio">Invio</button></span>
+				<span><a href="home" th:href="@{/home}"><button type="button" id="goBack">Indietro</button></a></span>
+			</div>
+		</div>
+		</form>
+		
+	  </section>
+		
+	</body>
+</html>

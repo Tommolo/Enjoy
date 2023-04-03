@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/fogliCss/prenotazione/prenotazioneForm.css}">
+<head th:replace="fragments/fragment.html :: head(title='Prenota')"></head>
+	<body>
+	
+	<nav th:replace="fragments/fragment.html :: intestazione"></nav>
+	
+	<section>
+		<div class="title"><p><b>Inserisci I Dati della tipologia di campo</b></p></div>
+		<form th:action="@{/admin/tipoCampo}" method="POST" th:object="${tipoCampo}" enctype="multipart/form-data">
+		<div th:if="${#fields.hasGlobalErrors()}">
+				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"
+					style="text-align: center; color: red">...</p>
+			</div>
+      		<div class ="row">
+					<div class="col-1">
+						<label>Nome:</label>
+					</div>
+					<div class="col-2">
+						<input type="text" th:field="*{nome}" />
+					</div>
+					<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+				</div>
+				<div class="col-1"><label>Numero Persone:</label></div>
+				<div class="col-2"><input type="number" th:field="*{numeroPersone}" style="font-size:16.5px" required  min="2" max="100"/></div>
+				<div th:if="${#fields.hasErrors('numeroPersone')}" th:errors="*{numeroPersone}"></div>
+		
+			<div class="col-1"><label>Prezzo:</label></div>
+				<div class="col-2"><input type="number" th:field="*{prezzo}" style="font-size:16.5px" required  min="0" max="100"/>	&euro;</div>
+				<div th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></div>
+			
+			<div class ="row">
+				<div  class="col-1"><label>Descrizione:</label></div>
+				<div class="col-2"><textarea th:field="*{descrizione}" class="bio" style="height:200px; width:50%; font-size:16.5px" /></textarea></div>
+				<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
+			</div>
+			<div class="row">
+					<div class="col-1">
+						<label>Foto:</label>
+					</div>
+					<div class="col-2">
+						<input type="file" name="image" accept="image/png, image/jpeg" />
+					</div>
+				</div>
+			<div class ="row">
+				<span><button type="submit" id="invio">Invio</button></span>
+				<span><a href="home" th:href="@{/area/admin}"><button type="button" id="goBack">Indietro</button></a></span>
+			</div>
+		</form>
+		
+	  </section>
+		
+	</body>
+</html>

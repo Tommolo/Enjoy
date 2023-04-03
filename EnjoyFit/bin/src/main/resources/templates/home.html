@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+	<title> Home </title>
+	<link th:href="@{/fogliCss/provaTendinaUtente.css}" rel="stylesheet">
+	<link th:href="@{/css/fragmentStyle.css}" rel="stylesheet">
+	<link rel="icon" href="/images/svg/logo.svg" type="image/icon type">
+</head>
+
+<body>
+	<nav th:replace="fragments/fragment.html :: intestazione"></nav>
+
+	<div class="header">
+
+		<div class="fade">
+				<img class="logo" th:src="@{/images/png/Logo.png}"alt="Image" height="2" width="42">
+			<div class="bgBlack"></div>
+			<h1>ENJOY FITNESS-CLUB</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+				fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+				deserunt mollit anim id est laborum</p>
+		</div>
+			<img th:src="@{/images/jpeg/Enjoy.jpg}">
+	</div>
+
+	<div class="boxes">
+		<a class="box" href="prenotazione/prenotazioneForm" th:href="@{/prenota}">
+			<img th:src="@{/images/jpeg/PrenotaCampo.jpg}">
+			<div class="bg"></div>
+			<h1 th:text="#{home.prenotaCampo}">Campo</h1>
+			<p>Lorem Ipsum dolorit sit amet</p>
+			<div class="bottomBar">
+				<h1 th:text="#{home.prenotaCampo}">Prenota</h1>
+			</div>
+		</a>
+
+		<a th:href="@{/effetuaAbbonamento}" class="box">
+			<img th:src="@{/images/jpeg/Abbonamento.jpeg}">
+			<div class="bg"></div>
+			<h1 th:text="#{box.Abbonamento}">Effettua Abbonamento</h1>
+			<p>Lorem Ipsum dolorit sit amet</p>
+			<div class="bottomBar">
+				<h1 th:text="#{box.Abbonamento}">Abbonati</h1>
+			</div>
+		</a>
+	</div>
+	<footer th:replace="fragments/fragment.html :: footer">
+	</footer>
+</body>
+
+</html>

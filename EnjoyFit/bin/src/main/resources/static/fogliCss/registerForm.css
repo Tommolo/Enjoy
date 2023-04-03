@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+}
+
+
+body {
+	font-family: Market Deco;
+}
+
+.form {
+	padding-top: 25vh;
+}
+
+#title {
+	text-align: center;
+	font-size: 35px;
+}
+
+#title p {
+	padding: 20px;
+}
+
+.box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.element {
+    padding: 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+input {
+	width: 50%;
+	height: 2vh;
+	border: solid;
+	border-color: #DCDCDC;
+	background-color: inherit;
+	outline: none;
+}
+
+input[type=password] {
+	font-family: sans-serif;
+}
+
+input[type=password]::placeholder {
+	font-family: Market Deco;
+}
+
+button {
+	width: 15%;
+	height: 2.5vh;
+	border: none;
+	border-radius: 5px;
+	color: #00FA9A;
+	background-color: white;
+}
+
+button:hover {
+	background-color: #00FA9A;
+	color: white;
+}
+

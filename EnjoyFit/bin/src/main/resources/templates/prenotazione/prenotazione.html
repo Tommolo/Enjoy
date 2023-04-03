@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/fogliCss/prenotazione/prenotazione.css}">
+<head th:replace="fragments/fragment.html :: head(title='Prenotazione')">
+</head>
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  
+  <nav th:replace="fragments/fragment.html :: intestazione"></nav>
+  
+      <section>
+      <div th:if="${prenotazione}" th:object="${prenotazione}">
+        <h1 class="title"><b>Prenotazione</b></h1>
+      <div class = "row">
+        <div class = "column"><b>Data: </b><span class = "infot" th:text="*{data.toString()}">xx</span></div>
+        <div class = "column"><b>Orario: </b><span class = "infot" th:text="*{orario.getValue()}">xx</span></div>
+        <div class = "column"><b>Numero di persone: </b><span class = "infot" th:text="*{tipoCampo.numeroPersone}">xx</span></div>
+          <div class = "column"><b>Prezzo: </b><span class = "infot" th:text="*{tipoCampo.prezzo} + ' €'">xx</span></div>
+        <div class = "column"><b>Commento: </b><span class = "infot" th:text="*{commento}">xx</span></div>
+      </div>
+      </div>
+      <div class="button">
+        <div class="button"><a sec:authorize="hasAuthority('ADMIN')" href="user" th:href="@{/admin/prenotazioni}"><button type="button" id="goBack">Indietro</button></a></div>
+      	<a href="home" th:href="@{/prenotazioni}" sec:authorize="hasAuthority('DEFAULT')"><button type="button" id="goBack">Indietro</button></a>
+      </div>
+      </section>
+  </body>
+</html>

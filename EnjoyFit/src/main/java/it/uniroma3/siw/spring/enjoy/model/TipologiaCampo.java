@@ -12,15 +12,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "tipoCampo")
-@Getter @Setter @AllArgsConstructor @EqualsAndHashCode @NoArgsConstructor
+
 public class TipologiaCampo {
 	
 	@Id
@@ -41,17 +36,76 @@ public class TipologiaCampo {
 	@OneToMany(mappedBy = "tipoCampo", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<PrenotazioneCampo> campi;
 	
+	
 	public TipologiaCampo(String n, String d) {
 		this.nome = n;
 		this.descrizione = d;
 	}
-	
+	public TipologiaCampo() {
+		
+	}
 	 @Transient
 	    public String getPhotosImagePath() {
 	        if (foto.equals(null) || id.equals(null)) return null;
 	         
 	        return "/uploadable/tipoCampi/" + id + "/" + foto;
 	    }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public int getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(int prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public int getNumeroPersone() {
+		return numeroPersone;
+	}
+
+	public void setNumeroPersone(int numeroPersone) {
+		this.numeroPersone = numeroPersone;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public List<PrenotazioneCampo> getCampi() {
+		return campi;
+	}
+
+	public void setCampi(List<PrenotazioneCampo> campi) {
+		this.campi = campi;
+	}
 	
 	
 

@@ -15,14 +15,9 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter @Setter @AllArgsConstructor @EqualsAndHashCode @ToString @NoArgsConstructor
+
+
 @Entity
 @Table(name = "prenotazioni")
 public class PrenotazioneCampo {
@@ -72,6 +67,62 @@ public class PrenotazioneCampo {
 	public void updatePrenotazione(PrenotazioneCampo p) {
 		this.orario = p.getOrario();
 		this.data = p.getData();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
+	public FasciaOraria getOrario() {
+		return orario;
+	}
+
+	public void setOrario(FasciaOraria orario) {
+		this.orario = orario;
+	}
+
+	public int getNumeroPersone() {
+		return numeroPersone;
+	}
+
+	public void setNumeroPersone(int numeroPersone) {
+		this.numeroPersone = numeroPersone;
+	}
+
+	public String getCommento() {
+		return commento;
+	}
+
+	public void setCommento(String commento) {
+		this.commento = commento;
+	}
+
+	public TipologiaCampo getTipoCampo() {
+		return tipoCampo;
+	}
+
+	public void setTipoCampo(TipologiaCampo tipoCampo) {
+		this.tipoCampo = tipoCampo;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
 	
