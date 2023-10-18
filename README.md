@@ -1,4 +1,6 @@
-# Enjoy
+# Enjoy Fit
+Al circolo "Enjoy Fitness Club" si possono iscrivere più soci. È presente una segreteria in cui lavorano uno o più segretari. Ogni Segretario è dotato di Nome, Cognome e Matricola, e può gestire la fase di conferma delle prenotazioni/iscrizioni di uno o più soci. Ogni socio può essere servito da più segretari. Un Socio può iscriversi al circolo sportivo fornendo Nome, Cognome, Data di Nascita, CF, Email, Numero di Telefono. Un socio può effettuare una o più Prenotazioni. Una Prenotazione, con Data, Ora e Numero, è associata a un solo socio. Ogni Prenotazione riguarda uno e un solo Campo. Per ogni Campo sono di interesse Nome, Numero e Tipo( può essere anche nullo nel caso in cui non è di interesse conoscere su quale campo si giocherà). Ogni Socio può iscriversi a un Abbonamento, caratterizzato da una DataInizio, DataFine, Descrizione e un numero di identificazione. Un Abbonamento riguarda una o più Attività. Per ogni Attività definiamo il nome (ad es. palestra, nuoto, centro benessere, etc..) e il costo.
+
 Casi d’uso ENJOYFITNESS CLUB:
 -Descrizione del modello di dominio:
 Al circolo "Enjoy Fitness Club" possono iscrivere più clienti. È presente una segreteria in cui lavorano uno o più segretari. Ogni Segretario è dotato di Nome, Cognome e può inserire nuove tipologie di campo e visualizzare i campi prenotati da uno o più clienti. 
